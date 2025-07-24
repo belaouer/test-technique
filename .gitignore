@@ -3,7 +3,10 @@
 /backend/dist/
 /backend/.env
 
+
+
 # frontend
+/frontend
 /frontend/node_modules/
 /frontend/.next/
 /frontend/.env.local
