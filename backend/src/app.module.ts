@@ -6,6 +6,9 @@ import { UsersModule } from './users/users.module';
 import { ListsModule } from './lists/lists.module';
 import { TasksModule } from './tasks/tasks.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { User } from './users/user.entity';
+import { TaskList } from './lists/list.entity';
+import { Task } from './tasks/task.entity';
 
 @Module({
   imports: [
@@ -18,8 +21,9 @@ import { TypeOrmModule } from '@nestjs/typeorm';
       host: 'localhost',
       port: 5432,
       username: 'postgres',
-      password: 'your_password',
+      password: 'Mouha1993+++',
       database: 'test_technique',
+      entities: [User, TaskList, Task],
       autoLoadEntities: true,
       synchronize: true, // à désactiver poru la prod
     }),
