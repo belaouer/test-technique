@@ -1,26 +1,41 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  @apply bg-gray-900 text-white;
+}
+
+/* Scrollbars custom si besoin */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-700 rounded;
+}
+
+.input {
+  @apply w-full p-3 rounded bg-gray-700 text-white placeholder-gray-400 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-indigo-500;
+}
+
+.btn-primary {
+  @apply w-full py-3 bg-indigo-600 rounded-lg text-white font-semibold hover:bg-indigo-700 transition disabled:opacity-50;
+}
+
+.btn-indigo {
+  @apply bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded;
+}
+
+.input-gray {
+  @apply w-full p-2 rounded bg-gray-800 text-white placeholder-gray-400;
+}
+
+.sidebar {
+  @apply bg-gray-800 text-white h-full flex flex-col p-4 space-y-4;
+}
+
+.task-item {
+  @apply bg-gray-800 p-3 rounded flex justify-between items-center cursor-pointer hover:bg-gray-700;
+}
+
+button {
+  cursor: pointer;
 }

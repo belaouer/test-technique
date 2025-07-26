@@ -21,6 +21,6 @@ export class JwtStrategy extends PassportStrategy(Strategy) {
       return null;
     }
     const { password, ...result } = user;
-    return result; // Injected in req.user
+    return result;
   }
 }

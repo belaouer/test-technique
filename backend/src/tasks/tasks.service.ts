@@ -33,6 +33,7 @@ export class TasksService {
       ...dto,
       dueDate: new Date(dto.dueDate),
       list,
+      user,
     });
 
     return this.taskRepo.save(task);
@@ -74,5 +75,14 @@ export class TasksService {
   async remove(id: string, user: User): Promise<void> {
     const task = await this.findOne(id, user);
     await this.taskRepo.remove(task);
+  }
+  async getByListId(listId: string, userId: string) {
+    return this.taskRepo.find({
+      where: {
+        list: { id: listId },
+        user: { id: userId },
+      },
+      relations: ['list', 'user'],
+    });
   }
 }

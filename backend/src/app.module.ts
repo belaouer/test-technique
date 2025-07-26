@@ -25,7 +25,7 @@ import { Task } from './tasks/task.entity';
       database: 'test_technique',
       entities: [User, TaskList, Task],
       autoLoadEntities: true,
-      synchronize: true, // à désactiver poru la prod
+      synchronize: true, 
     }),
   ],
   controllers: [AppController],

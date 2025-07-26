@@ -31,4 +31,9 @@ export class ListsController {
   remove(@Param('id') id: string, @Request() req) {
     return this.listsService.remove(id, req.user);
   }
+
+  @Get(':id/tasks')
+  getTasksByList(@Param('id') id: string, @Request() req) {
+    return this.listsService.getTasksByList(id, req.user);
+  }
 }

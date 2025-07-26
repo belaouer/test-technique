@@ -23,11 +23,6 @@ export class TasksController {
     return this.tasksService.create(dto, req.user);
   }
 
-  @Get('list/:listId')
-  findByList(@Param('listId') listId: string, @Request() req) {
-    return this.tasksService.findAllForList(listId, req.user);
-  }
-
   @Get(':id')
   findOne(@Param('id') id: string, @Request() req) {
     return this.tasksService.findOne(id, req.user);

@@ -26,7 +26,7 @@ export class UsersService {
   async findByEmail(email: string): Promise<User | null> {
     return this.userRepository.findOne({
       where: { email },
-      relations: ['taskLists'], // utile si tu veux les charger avec
+      relations: ['taskLists'], 
     });
   }
 

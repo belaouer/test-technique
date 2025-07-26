@@ -1,4 +1,3 @@
-
 import { Task } from 'src/tasks/task.entity';
 import { User } from 'src/users/user.entity';
 import {
@@ -9,7 +8,6 @@ import {
   OneToMany,
   CreateDateColumn,
 } from 'typeorm';
-
 
 @Entity()
 export class TaskList {

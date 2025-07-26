@@ -1,4 +1,5 @@
 import { TaskList } from 'src/lists/list.entity';
+import { Task } from 'src/tasks/task.entity';
 import {
   Entity,
   PrimaryGeneratedColumn,
@@ -6,7 +7,6 @@ import {
   OneToMany,
   CreateDateColumn,
 } from 'typeorm';
-
 
 @Entity()
 export class User {
@@ -30,4 +30,7 @@ export class User {
 
   @OneToMany(() => TaskList, (list) => list.owner)
   taskLists: TaskList[];
+
+  @OneToMany(() => Task, (task) => task.user)
+  tasks: Task[];
 }
