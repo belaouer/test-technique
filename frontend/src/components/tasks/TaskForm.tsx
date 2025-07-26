@@ -8,8 +8,6 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import toast from "react-hot-toast";
 import { TaskSchema } from "@/lib/zod/taskSchema";
 
-
-
 type TaskFormData = z.infer<typeof TaskSchema>;
 
 export default function TaskForm() {
@@ -68,7 +66,7 @@ export default function TaskForm() {
 
       <button
         type="submit"
-        className="bg-blue-500 text-white px-4 py-1 rounded"
+        className="bg-indigo-600 text-white px-4 py-1 rounded"
       >
         Ajouter
       </button>
